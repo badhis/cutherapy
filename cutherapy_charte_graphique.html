@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutherapy — Charte Graphique</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:   #1A1A1A;
+    --dark:    #2C2C2A;
+    --teal:    #1D9E75;
+    --teal-d:  #0F6E56;
+    --teal-dd: #04342C;
+    --teal-l:  #E1F5EE;
+    --amber:   #EF9F27;
+    --amber-d: #633806;
+    --amber-l: #FAEEDA;
+    --sand:    #F1EFE8;
+    --gray:    #888780;
+    --gray-l:  #D3D1C7;
+    --white:   #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--sand);
+    color: var(--black);
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--gray-l);
+  }
+
+  .header-left { flex: 1; }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .brand-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--black);
+    letter-spacing: -.02em;
+    margin-bottom: 8px;
+  }
+
+  .brand-slogan {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--gray);
+    letter-spacing: .01em;
+  }
+
+  .header-logo { flex-shrink: 0; }
+
+  .logo-mark {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-shear {
+    position: absolute;
+    inset: 0;
+    background: var(--teal);
+    clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
+  }
+
+  .logo-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--teal);
+    font-weight: 500;
+    min-width: 24px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--gray-l);
+  }
+
+  /* ── PALETTE ── */
+  .palette-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .swatch-color {
+    height: 80px;
+    border-radius: 8px;
+    transition: transform .15s;
+    cursor: default;
+  }
+
+  .swatch-color:hover { transform: scaleY(1.04); }
+
+  .swatch-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.2;
+  }
+
+  .swatch-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gray);
+  }
+
+  .swatch-use {
+    font-size: 10px;
+    color: var(--teal-d);
+    background: var(--teal-l);
+    padding: 1px 6px;
+    border-radius: 99px;
+    display: inline-block;
+    margin-top: 2px;
+  }
+
+  /* ── TYPO ── */
+  .type-rows { display: flex; flex-direction: column; gap: 0; }
+
+  .type-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-l);
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gray); line-height: 1.6; }
+
+  .t-display  { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--black); line-height: 1.1; letter-spacing: -.01em; }
+  .t-display-i{ font-family: 'DM Serif Display', serif; font-size: 20px; font-style: italic; color: var(--gray); line-height: 1.2; }
+  .t-h2       { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 600; color: var(--black); }
+  .t-h3       { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 500; color: var(--black); }
+  .t-body     { font-family: 'Syne', sans-serif; font-size: 14px; color: var(--gray); line-height: 1.7; }
+  .t-mono     { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-d); }
+  .t-label    { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+
+  /* ── LOGO VARIATIONS ── */
+  .logo-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .logo-var {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .logo-var-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gray); }
+
+  .logo-wrap {
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lw-sand  { background: var(--sand);  border: 1px solid var(--gray-l); }
+  .lw-dark  { background: var(--black); }
+  .lw-amber { background: var(--amber); }
+
+  .lm { width: 44px; height: 44px; border-radius: 9px; position: relative; overflow: hidden; flex-shrink: 0; }
+  .lm-bg-dark  { background: var(--black); }
+  .lm-bg-dark2 { background: var(--dark); }
+  .lm-bg-amber { background: var(--black); }
+
+  .lm-shear { position: absolute; inset: 0; clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%); }
+  .lm-teal  { background: var(--teal); }
+  .lm-ambs  { background: var(--amber); }
+
+  .lm-icon { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; height: 100%; }
+
+  .wm { display: flex; flex-direction: column; gap: 2px; }
+  .wm-n { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+  .wm-s { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 10px; }
+  .wm-n-l { color: var(--black); }
+  .wm-n-d { color: var(--sand); }
+  .wm-n-a { color: var(--black); }
+  .wm-s-l { color: var(--gray); }
+  .wm-s-d { color: var(--teal); }
+  .wm-s-a { color: var(--amber-d); }
+
+  /* ── USAGE EXAMPLES ── */
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* business card dark */
+  .ex-card-dark {
+    background: var(--black);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+  }
+
+  .ec-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .ec-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--sand); line-height: 1.1; }
+  .ec-role { font-size: 10px; color: var(--teal); font-weight: 600; letter-spacing: .08em; margin-top: 3px; }
+  .ec-badge { background: var(--amber); color: var(--amber-d); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 99px; }
+  .ec-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .ec-contact { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gray); }
+  .ec-price { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--amber); }
+
+  /* service card light */
+  .ex-card-light {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px 24px;
+    border: 1px solid var(--gray-l);
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .el-tag { font-size: 10px; font-weight: 600; letter-spacing: .08em; color: var(--teal-d); background: var(--teal-l); padding: 2px 8px; border-radius: 99px; display: inline-block; margin-bottom: 8px; }
+  .el-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+  .el-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
+  .el-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+  .el-price { font-family: 'DM Mono', monospace; font-size: 16px; font-weight: 500; color: var(--black); }
+  .el-cta { font-size: 11px; font-weight: 600; color: var(--teal); cursor: pointer; }
+
+  /* email signature */
+  .ex-signature {
+    background: var(--sand);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    grid-column: span 2;
+  }
+
+  .sig-name { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--black); }
+  .sig-role { font-size: 11px; font-weight: 600; color: var(--teal); letter-spacing: .06em; margin-bottom: 6px; }
+  .sig-row  { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gray); display: flex; gap: 16px; flex-wrap: wrap; }
+  .sig-sep  { color: var(--amber); font-weight: 600; }
+
+  /* ── DO / DON'T ── */
+  .dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .dd-card {
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .dd-no  { background: #FEF2F2; border: 1px solid #FCA5A5; }
+  .dd-yes { background: var(--teal-l); border: 1px solid #5DCAA5; }
+
+  .dd-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+  .dd-no  .dd-label { color: #B91C1C; }
+  .dd-yes .dd-label { color: var(--teal-d); }
+
+  .dd-text { font-size: 12px; line-height: 1.6; font-style: italic; }
+  .dd-no  .dd-text { color: #B91C1C; }
+  .dd-yes .dd-text { color: var(--teal-dd); }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-l);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 12px;
+  }
+
+  .footer-left { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gray); }
+  .footer-right { display: flex; gap: 8px; flex-wrap: wrap; }
+  .footer-pill { font-family: 'DM Mono', monospace; font-size: 10px; padding: 3px 10px; border-radius: 99px; }
+  .fp-black  { background: var(--black);  color: var(--sand); }
+  .fp-teal   { background: var(--teal);   color: var(--teal-dd); }
+  .fp-amber  { background: var(--amber);  color: var(--amber-d); }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 24px; }
+    .swatch-color:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-left">
+      <p class="eyebrow">Charte graphique · v1.0 · 2026</p>
+      <h1 class="brand-name">Cutherapy</h1>
+      <p class="brand-slogan">Votre image mérite du soin</p>
+    </div>
+    <div class="header-logo">
+      <div class="logo-mark">
+        <div class="logo-shear"></div>
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#F1EFE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+            <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 01 PALETTE ── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Palette de couleurs</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="palette-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1A1A1A"></div>
+        <span class="swatch-name">Noir profond</span>
+        <span class="swatch-hex">#1A1A1A</span>
+        <span class="swatch-use">Primaire</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1D9E75"></div>
+        <span class="swatch-name">Teal vif</span>
+        <span class="swatch-hex">#1D9E75</span>
+        <span class="swatch-use">Accent 1</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0F6E56"></div>
+        <span class="swatch-name">Teal profond</span>
+        <span class="swatch-hex">#0F6E56</span>
+        <span class="swatch-use">Logo</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E1F5EE; border:1px solid #9FE1CB"></div>
+        <span class="swatch-name">Teal pâle</span>
+        <span class="swatch-hex">#E1F5EE</span>
+        <span class="swatch-use">Fond teal</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#EF9F27"></div>
+        <span class="swatch-name">Ambre</span>
+        <span class="swatch-hex">#EF9F27</span>
+        <span class="swatch-use">Accent 2</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAEEDA; border:1px solid #FAC775"></div>
+        <span class="swatch-name">Ambre pâle</span>
+        <span class="swatch-hex">#FAEEDA</span>
+        <span class="swatch-use">Premium</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F1EFE8; border:1px solid #D3D1C7"></div>
+        <span class="swatch-name">Sable</span>
+        <span class="swatch-hex">#F1EFE8</span>
+        <span class="swatch-use">Fond</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#888780"></div>
+        <span class="swatch-name">Gris moyen</span>
+        <span class="swatch-hex">#888780</span>
+        <span class="swatch-use">Secondaire</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02 TYPOGRAPHIE ── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Typographie</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="type-rows">
+      <div class="type-row">
+        <div class="type-meta">DM Serif Display<br>Titres / Display<br>36px · regular</div>
+        <span class="t-display">Monteur vidéo médical</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">DM Serif Display<br>Slogans / italiques<br>20px · italic</div>
+        <span class="t-display-i">Votre image mérite du soin</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Syne<br>Titres section<br>22px · 600</div>
+        <span class="t-h2">Ce que vous recevez en 48h</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Syne<br>Corps de texte<br>14px · 400</div>
+        <span class="t-body">Vous filmez entre deux consultations. Je monte, sous-titre et livre en 48h — sans que vous touchiez un logiciel.</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">DM Mono<br>Codes, prix, tags<br>12px · 500</div>
+        <span class="t-mono">1 000 € / mois · #1D9E75 · cutherapy.fr</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Syne<br>Labels / eyebrows<br>10px · 600 · uppercase</div>
+        <span class="t-label">Montage médical · Livraison 48h</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 LOGO ── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Logo & variations</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-var">
+        <span class="logo-var-label">Version principale · fond sable</span>
+        <div class="logo-wrap lw-sand">
+          <div class="lm lm-bg-dark">
+            <div class="lm-shear lm-teal"></div>
+            <div class="lm-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F1EFE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+                <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+              </svg>
+            </div>
+          </div>
+          <div class="wm">
+            <span class="wm-n wm-n-l">Cutherapy</span>
+            <span class="wm-s wm-s-l">Votre image mérite du soin</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-var">
+        <span class="logo-var-label">Version dark · fond noir</span>
+        <div class="logo-wrap lw-dark">
+          <div class="lm lm-bg-dark2">
+            <div class="lm-shear lm-teal"></div>
+            <div class="lm-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F1EFE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+                <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+              </svg>
+            </div>
+          </div>
+          <div class="wm">
+            <span class="wm-n wm-n-d">Cutherapy</span>
+            <span class="wm-s wm-s-d">Votre image mérite du soin</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-var">
+        <span class="logo-var-label">Version accent · fond ambre</span>
+        <div class="logo-wrap lw-amber">
+          <div class="lm lm-bg-amber">
+            <div class="lm-shear lm-ambs"></div>
+            <div class="lm-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+                <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+              </svg>
+            </div>
+          </div>
+          <div class="wm">
+            <span class="wm-n wm-n-a">Cutherapy</span>
+            <span class="wm-s wm-s-a">Votre image mérite du soin</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-var">
+        <span class="logo-var-label">Icône seule · avatar / favicon</span>
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 0">
+          <div style="width:56px;height:56px;border-radius:11px;background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <div style="position:absolute;inset:0;background:var(--teal);clip-path:polygon(0 0, 56% 0, 44% 100%, 0 100%)"></div>
+            <svg style="position:relative;z-index:1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F1EFE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+              <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+            </svg>
+          </div>
+          <div style="width:44px;height:44px;border-radius:22px;background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <div style="position:absolute;inset:0;background:var(--teal);clip-path:polygon(0 0, 56% 0, 44% 100%, 0 100%)"></div>
+            <svg style="position:relative;z-index:1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F1EFE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+              <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+            </svg>
+          </div>
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <div style="position:absolute;inset:0;background:var(--teal);clip-path:polygon(0 0, 56% 0, 44% 100%, 0 100%)"></div>
+            <svg style="position:relative;z-index:1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F1EFE8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+              <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 EXEMPLES D'UTILISATION ── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Exemples d'utilisation</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="usage-grid">
+      <div class="ex-card-dark">
+        <div class="ec-top">
+          <div>
+            <p class="ec-name">Votre Prénom<br>Nom</p>
+            <p class="ec-role">Monteur vidéo · Spécialiste santé</p>
+          </div>
+          <span class="ec-badge">Disponible</span>
+        </div>
+        <div class="ec-bottom">
+          <div class="ec-contact">cutherapy.fr<br>contact@cutherapy.fr</div>
+          <span class="ec-price">1 000 €<span style="font-size:11px;color:var(--gray)">/mois</span></span>
+        </div>
+      </div>
+
+      <div class="ex-card-light">
+        <div>
+          <span class="el-tag">Pack recommandé</span>
+          <p class="el-title">8 vidéos · calendrier · rapport mensuel</p>
+          <p class="el-desc">Vous envoyez le brut. Je livre propre, sous-titré, adapté à votre spécialité médicale.</p>
+        </div>
+        <div class="el-bottom">
+          <span class="el-price">1 500 € <span style="font-size:11px;color:var(--gray);font-family:Syne,sans-serif">/mois</span></span>
+          <span class="el-cta">Voir le détail →</span>
+        </div>
+      </div>
+
+      <div class="ex-signature">
+        <p class="sig-name">Votre Prénom Nom</p>
+        <p class="sig-role">Cutherapy · Montage vidéo médical</p>
+        <div class="sig-row">
+          <span>cutherapy.fr</span>
+          <span class="sig-sep">·</span>
+          <span>contact@cutherapy.fr</span>
+          <span class="sig-sep">·</span>
+          <span>Livraison 48h · À partir de 1 000 €/mois</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 TON ÉDITORIAL ── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Ton éditorial</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="dd-grid">
+      <div class="dd-card dd-no">
+        <p class="dd-label">À éviter</p>
+        <p class="dd-text">"Je suis passionné par la vidéo et j'adore aider les créateurs à développer leur personal branding !"</p>
+      </div>
+      <div class="dd-card dd-yes">
+        <p class="dd-label">À adopter</p>
+        <p class="dd-text">"Vous filmez entre deux consultations. Je monte et livre en 48h. Vous ne touchez pas au logiciel."</p>
+      </div>
+      <div class="dd-card dd-no">
+        <p class="dd-label">À éviter</p>
+        <p class="dd-text">"Mes montages sont créatifs, dynamiques et de qualité professionnelle à des prix compétitifs."</p>
+      </div>
+      <div class="dd-card dd-yes">
+        <p class="dd-label">À adopter</p>
+        <p class="dd-text">"Votre image professionnelle mérite un montage à la hauteur de votre expertise médicale."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-left">
+      Cutherapy · Charte graphique v1.0 · 2026<br>
+      Polices : DM Serif Display · Syne · DM Mono
+    </div>
+    <div class="footer-right">
+      <span class="footer-pill fp-black">#1A1A1A</span>
+      <span class="footer-pill fp-teal">#1D9E75</span>
+      <span class="footer-pill fp-amber">#EF9F27</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
