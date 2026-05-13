@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\Ismaël\\\\portfolio cutherapy\" -Force | Select-Object Name, @{Name=\"Type\"; Expression={if\\($_.PSIsContainer\\){\"Directory\"}else{\"File\"}}})",
+      "PowerShell(\\(ls -Recurse \"C:\\\\Users\\\\Ismaël\\\\portfolio cutherapy\" 2>$null | Measure-Object\\).Count)",
+      "PowerShell([System.IO.Directory]::GetFiles\\(\"C:\\\\Users\\\\Ismaël\\\\portfolio cutherapy\"\\) | ForEach-Object {[System.IO.Path]::GetFileName\\($_\\)})",
+      "PowerShell([System.IO.Directory]::GetDirectories\\(\"C:\\\\Users\\\\Ismaël\\\\portfolio cutherapy\"\\))",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --skip-install)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\Users\\\\Ismaël\\\\cutherapy_charte_graphique.html 2>nul\")",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\Users\\\\Ismaël\\\\Desktop\\\\*.html 2>nul\")",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\Users\\\\Ismaël\\\\Downloads\\\\*.html 2>nul\")",
+      "Bash(curl *)",
+      "Bash(python3 -c \"import sys; content = sys.stdin.read\\(\\); print\\(content[content.find\\('Error'\\):content.find\\('Error'\\)+500] if 'Error' in content else content[:500]\\)\")",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /PID 5620 /F)",
+      "Bash(taskkill /PID 8592 /F)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

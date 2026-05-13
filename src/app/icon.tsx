@@ -35,7 +35,7 @@ export default function Icon() {
           height={17}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#F1EFE8"
+          stroke="#EF9F27"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"

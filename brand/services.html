@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutherapy — Services</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:    #1A1A1A;
+    --dark:     #2C2C2A;
+    --teal:     #1D9E75;
+    --teal-d:   #0F6E56;
+    --teal-dd:  #04342C;
+    --teal-l:   #E1F5EE;
+    --amber:    #EF9F27;
+    --amber-d:  #633806;
+    --amber-l:  #FAEEDA;
+    --sand:     #F1EFE8;
+    --gray:     #888780;
+    --gray-l:   #D3D1C7;
+    --white:    #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--sand);
+    font-family: 'Syne', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: var(--black);
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .services-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px 120px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-intro {
+    margin-bottom: 72px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--teal);
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -.025em;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  /* Middle card is taller / featured */
+  .card--featured {
+    margin-top: -24px;
+    margin-bottom: -24px;
+  }
+
+  /* ── CARD BASE ── */
+  .card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0,0,0,.12);
+  }
+
+  /* ── CARD 1 — ESSENTIEL ── */
+  .card--essential {
+    background: var(--white);
+    border: 1px solid var(--gray-l);
+  }
+
+  /* ── CARD 2 — FEATURED ── */
+  .card--featured-inner {
+    background: var(--black);
+  }
+
+  /* ── CARD 3 — PREMIUM ── */
+  .card--premium {
+    background: var(--teal-dd);
+  }
+
+  /* ── CARD HEADER ── */
+  .card-header {
+    padding: 32px 32px 24px;
+    position: relative;
+  }
+
+  .card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 99px;
+    margin-bottom: 20px;
+  }
+
+  .badge--essential { background: var(--sand); color: var(--gray); border: 1px solid var(--gray-l); }
+  .badge--featured  { background: var(--amber); color: var(--amber-d); }
+  .badge--premium   { background: rgba(255,255,255,.1); color: rgba(255,255,255,.6); border: 1px solid rgba(255,255,255,.15); }
+
+  .card-pulse {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    margin-bottom: 8px;
+  }
+
+  .title--light  { color: var(--black); }
+  .title--dark   { color: var(--sand); }
+  .title--teal   { color: var(--teal-l); }
+
+  .card-sub {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .sub--light { color: var(--gray); }
+  .sub--dark  { color: #555552; }
+  .sub--teal  { color: rgba(225,245,238,.65); }
+
+  /* price */
+  .card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid;
+  }
+  .price-row--light  { border-color: var(--gray-l); }
+  .price-row--dark   { border-color: #2C2C2A; }
+  .price-row--teal   { border-color: rgba(29,158,117,.3); }
+
+  .price-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .price--light    { color: var(--black); }
+  .price--featured { color: var(--amber); }
+  .price--premium  { color: var(--teal); }
+
+  .price-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+  }
+  .period--light   { color: var(--gray); }
+  .period--dark    { color: #555552; }
+  .period--teal    { color: rgba(225,245,238,.5); }
+
+  .delay-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-top: 10px;
+  }
+  .delay--light   { background: var(--teal-l); color: var(--teal-d); }
+  .delay--dark    { background: rgba(29,158,117,.2); color: var(--teal); }
+  .delay--premium { background: rgba(29,158,117,.15); color: #5DCAA5; }
+
+  /* ── CARD BODY ── */
+  .card-body {
+    padding: 0 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .feature-group { display: flex; flex-direction: column; gap: 0; }
+
+  .feature-group-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+  }
+  .fgl--light  { color: var(--teal-d); border-color: var(--gray-l); }
+  .fgl--dark   { color: #555552; border-color: #2C2C2A; }
+  .fgl--teal   { color: rgba(93,202,165,.7); border-color: rgba(29,158,117,.25); }
+
+  .feature-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .feature-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .feature-check {
+    flex-shrink: 0;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .check--light   { background: var(--teal-l); }
+  .check--dark    { background: rgba(29,158,117,.2); }
+  .check--premium { background: rgba(29,158,117,.15); }
+
+  .feature-check svg { display: block; }
+
+  .feature-text { display: flex; flex-direction: column; gap: 1px; }
+  .feature-main { font-size: 13px; line-height: 1.4; }
+  .fmain--light { color: var(--black); }
+  .fmain--dark  { color: var(--sand); }
+  .fmain--teal  { color: var(--teal-l); }
+
+  .feature-note { font-size: 11px; }
+  .fnote--light { color: var(--gray); }
+  .fnote--dark  { color: #555552; }
+  .fnote--teal  { color: rgba(225,245,238,.45); }
+
+  /* ── CTA ── */
+  .card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity .2s, transform .15s;
+    text-decoration: none;
+  }
+  .card-cta:hover { opacity: .88; transform: scale(1.01); }
+
+  .cta--light   { background: var(--black); color: var(--sand); }
+  .cta--dark    { background: var(--amber); color: var(--amber-d); }
+  .cta--premium { background: var(--teal); color: var(--teal-dd); }
+
+  .cta-arrow { font-size: 18px; transition: transform .2s; }
+  .card-cta:hover .cta-arrow { transform: translateX(4px); }
+
+  /* ── COMPARISON NOTE ── */
+  .comparison-note {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .note-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid var(--gray-l);
+  }
+
+  .note-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--teal-l);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .note-content { display: flex; flex-direction: column; gap: 3px; }
+  .note-title { font-size: 13px; font-weight: 600; color: var(--black); }
+  .note-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+  /* ── FADE IN ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card { animation: fadeUp .5s ease both; }
+  .card:nth-child(1) { animation-delay: .1s; }
+  .card:nth-child(2) { animation-delay: .2s; }
+  .card:nth-child(3) { animation-delay: .3s; }
+
+  .note-item { animation: fadeUp .5s ease both; }
+  .note-item:nth-child(1) { animation-delay: .35s; }
+  .note-item:nth-child(2) { animation-delay: .45s; }
+  .note-item:nth-child(3) { animation-delay: .55s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .card--featured { margin-top: 0; margin-bottom: 0; }
+    .comparison-note { grid-template-columns: 1fr; }
+    .services-section { padding: 60px 24px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="services-section">
+
+  <!-- ── INTRO ── -->
+  <div class="section-intro">
+    <p class="eyebrow">Protocoles de soin</p>
+    <h2 class="section-title">Choisissez votre<br><em>protocole de soin</em> image.</h2>
+    <p class="section-sub">Trois formules. Un seul engagement : vos vidéos sont livrées propres, sous-titrées et prêtes à publier — sans que vous touchiez un logiciel.</p>
+  </div>
+
+  <!-- ── CARDS ── -->
+  <div class="cards-grid">
+
+    <!-- ── CARD 1 : BILAN INITIAL ── -->
+    <div class="card card--essential">
+      <div class="card-header">
+        <span class="card-badge badge--essential">Consultation</span>
+
+        <svg class="card-pulse" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <rect width="44" height="44" rx="9" fill="#E1F5EE"/>
+          <path d="M6 22h7l2-3.5 4 9 4-13 3 7h6" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <h3 class="card-title title--light">Le Bilan Initial</h3>
+        <p class="card-sub sub--light">Pour tester la collaboration avant de s'engager. Un mois, 4 vidéos, zéro friction — comme une première consultation.</p>
+
+        <div class="card-price-row price-row--light">
+          <span class="price-amount price--light">600 €</span>
+          <span class="price-period period--light">/ mois</span>
+        </div>
+        <span class="delay-pill delay--light">⏱ Livraison 72h</span>
+      </div>
+
+      <div class="card-body">
+        <div class="feature-group">
+          <p class="feature-group-label fgl--light">Montage</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-check check--light"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#0F6E56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--light"><strong>4 vidéos courtes</strong> montées (60–90 s)</span>
+                <span class="feature-note fnote--light">Reels · TikTok · YouTube Shorts</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--light"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#0F6E56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--light"><strong>Sous-titres</strong> adaptés grand public</span>
+                <span class="feature-note fnote--light">Termes médicaux reformulés</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--light"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#0F6E56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--light"><strong>Musique</strong> libre de droits</span>
+                <span class="feature-note fnote--light">1 aller-retour de correction inclus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-group">
+          <p class="feature-group-label fgl--light">Suivi</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-check check--light"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#0F6E56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--light"><strong>Dossier Drive</strong> partagé & organisé</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--light"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#0F6E56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--light"><strong>Checklist de tournage</strong> PDF</span>
+                <span class="feature-note fnote--light">Filmer seul, efficacement, au smartphone</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="card-cta cta--light">
+          <span>Démarrer le bilan</span>
+          <span class="cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CARD 2 : TRAITEMENT DE FOND (FEATURED) ── -->
+    <div class="card card--featured card--featured-inner">
+      <div class="card-header">
+        <span class="card-badge badge--featured">⭐ Traitement recommandé</span>
+
+        <svg class="card-pulse" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <rect width="44" height="44" rx="9" fill="rgba(29,158,117,0.2)"/>
+          <path d="M2 18.5a11 11 0 0 1 19.18-7.35.56.56 0 0 0 .82 0A11 11 0 0 1 42 18.5c0 4.58-3 8-6 11L27 40.63a4 4 0 0 1-6 .04L10 29.5C7 26.5 4 23.08 4 18.5z" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="scale(0.92) translate(2,2)"/>
+          <path d="M6.44 26H18l1-2 4 9 4-14 3 7h10.54" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <h3 class="card-title title--dark">Le Traitement de Fond</h3>
+        <p class="card-sub sub--dark">Régularité, croissance, présence. Comme un traitement chronique — on met en place le protocole et les résultats suivent.</p>
+
+        <div class="card-price-row price-row--dark">
+          <span class="price-amount price--featured">1 000 €</span>
+          <span class="price-period period--dark">/ mois</span>
+        </div>
+        <span class="delay-pill delay--dark">⏱ Livraison 48h</span>
+      </div>
+
+      <div class="card-body">
+        <div class="feature-group">
+          <p class="feature-group-label fgl--dark">Montage</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>8 vidéos</strong> / mois</span>
+                <span class="feature-note fnote--dark">Shorts + 1–2 longs formats YouTube</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>Sous-titres animés</strong> + hook travaillé</span>
+                <span class="feature-note fnote--dark">3 premières secondes optimisées</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>B-roll santé</strong> intégré</span>
+                <span class="feature-note fnote--dark">Images libres de droits soignées</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>Déclinaison automatique</strong></span>
+                <span class="feature-note fnote--dark">Long format → Short extrait inclus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-group">
+          <p class="feature-group-label fgl--dark">Pilotage</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>Calendrier éditorial</strong> mensuel</span>
+                <span class="feature-note fnote--dark">Thèmes · formats · jours de publication</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>Relances automatisées</strong></span>
+                <span class="feature-note fnote--dark">Rappel si le brut n'est pas reçu à J-2</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--dark"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--dark"><strong>Rapport mensuel</strong> 1 page</span>
+                <span class="feature-note fnote--dark">Ce qui performe + recommandations M+1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="card-cta cta--dark">
+          <span>Commencer le traitement</span>
+          <span class="cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CARD 3 : PRISE EN CHARGE GLOBALE ── -->
+    <div class="card card--premium">
+      <div class="card-header">
+        <span class="card-badge badge--premium">Prise en charge complète</span>
+
+        <svg class="card-pulse" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <rect width="44" height="44" rx="9" fill="rgba(29,158,117,0.15)"/>
+          <circle cx="22" cy="22" r="12" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <path d="M16 22h12M22 16v12" stroke="#5DCAA5" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <h3 class="card-title title--teal">La Prise en Charge Globale</h3>
+        <p class="card-sub sub--teal">Pour le médecin qui veut externaliser son pôle contenu entièrement. Vous filmez. Je prends en charge tout le reste.</p>
+
+        <div class="card-price-row price-row--teal">
+          <span class="price-amount price--premium">1 500 €</span>
+          <span class="price-period period--teal">/ mois</span>
+        </div>
+        <span class="delay-pill delay--premium">⏱ Livraison 24–48h · prioritaire</span>
+      </div>
+
+      <div class="card-body">
+        <div class="feature-group">
+          <p class="feature-group-label fgl--teal">Montage</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-check check--premium"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--teal"><strong>12 vidéos</strong> / mois · tous formats</span>
+                <span class="feature-note fnote--teal">YT long · Shorts · Reels · LinkedIn</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--premium"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--teal"><strong>Habillage graphique</strong> à vos couleurs</span>
+                <span class="feature-note fnote--teal">Intro · Outro · Lower-thirds personnalisés</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--premium"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--teal"><strong>Révisions illimitées</strong></span>
+                <span class="feature-note fnote--teal">Jusqu'à validation complète</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-group">
+          <p class="feature-group-label fgl--teal">Direction de contenu</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-check check--premium"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--teal"><strong>Stratégie éditoriale</strong> trimestrielle</span>
+                <span class="feature-note fnote--teal">Plan 90 jours aligné sur vos objectifs</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--premium"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--teal"><strong>Brief de tournage</strong> mensuel</span>
+                <span class="feature-note fnote--teal">Script allégé + cadrage guidé à distance</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check check--premium"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="feature-text">
+                <span class="feature-main fmain--teal"><strong>Réunion mensuelle</strong> 30 min</span>
+                <span class="feature-note fnote--teal">Visio de pilotage + veille sujets tendance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="card-cta cta--premium">
+          <span>Me confier votre image</span>
+          <span class="cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── REASSURANCE ROW ── -->
+  <div class="comparison-note">
+    <div class="note-item">
+      <div class="note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+          <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+        </svg>
+      </div>
+      <div class="note-content">
+        <p class="note-title">Infirmier DE</p>
+        <p class="note-desc">Vos termes médicaux, vos enjeux déontologiques — compris sans brief technique.</p>
+      </div>
+    </div>
+    <div class="note-item">
+      <div class="note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="note-content">
+        <p class="note-title">Livraison garantie</p>
+        <p class="note-desc">24h à 72h selon le pack. Jamais de retard qui décale votre calendrier.</p>
+      </div>
+    </div>
+    <div class="note-item">
+      <div class="note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <div class="note-content">
+        <p class="note-title">Satisfaction ou refait</p>
+        <p class="note-desc">Première vidéo non satisfaisante ? Je la remonte intégralement, sans surcoût.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

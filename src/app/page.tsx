@@ -80,42 +80,56 @@ export default function Home() {
               }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#1D9E75" }} />
-              DISPONIBLE · NOUVEAUX PROJETS
+              INFIRMIER DE · MONTEUR VIDÉO
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-6xl lg:text-[68px] leading-[1.02] mb-6"
+              className="text-4xl md:text-5xl lg:text-[56px] leading-[1.08] mb-5"
               style={{ fontFamily: "var(--font-serif)", color: "#F1EFE8", letterSpacing: "-0.02em" }}
             >
-              Votre image
+              Le seul monteur vidéo
               <br />
-              <em style={{ color: "#1D9E75", fontStyle: "italic" }}>mérite</em>
+              qui{" "}
+              <em style={{ color: "#1D9E75", fontStyle: "italic" }}>comprend</em>
               <br />
-              du soin.
+              ce que vous dites.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.35 }}
-              className="text-base leading-relaxed mb-10 max-w-md"
+              className="text-base leading-relaxed mb-3 max-w-md"
               style={{ color: "#888780", fontFamily: "var(--font-sans)" }}
             >
-              Montage vidéo pour médecins et professionnels de santé.
-              Vous filmez entre deux consultations — je monte et livre en 48h.
+              Infirmier DE le jour et monteur vidéo le reste du temps.
+              Je transforme votre brut en contenu propre, sous-titré et prêt
+              à publier — en 48h. Sans allers-retours inutiles.
+              Vos termes, vos enjeux de crédibilité, vos contraintes
+              déontologiques — je les connais.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.42 }}
+              className="text-sm font-medium mb-8 italic"
+              style={{ fontFamily: "var(--font-serif)", color: "#EF9F27" }}
+            >
+              Vous soignez. Je m&apos;occupe de votre image.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className="flex flex-wrap gap-3"
             >
               <Link
-                href="/contact"
+                href="/services"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold transition-all duration-200"
                 style={{ background: "#1D9E75", color: "#F1EFE8" }}
                 onMouseEnter={(e) => {
@@ -129,10 +143,10 @@ export default function Home() {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                Démarrer un projet <ArrowRight size={15} />
+                Voir les offres <ArrowRight size={15} />
               </Link>
               <Link
-                href="/projets"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold border transition-all duration-200"
                 style={{ borderColor: "rgba(255,255,255,0.15)", color: "#888780" }}
                 onMouseEnter={(e) => {
@@ -144,7 +158,7 @@ export default function Home() {
                   e.currentTarget.style.color = "#888780";
                 }}
               >
-                <Play size={15} /> Voir les projets
+                Prendre contact
               </Link>
             </motion.div>
           </div>

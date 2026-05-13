@@ -39,7 +39,7 @@ export function LogoMark({ size = 44, variant = "teal", bgColor = "#1A1A1A" }: L
         height={iconSize}
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#F1EFE8"
+        stroke="#EF9F27"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

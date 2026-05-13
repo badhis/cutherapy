@@ -1,0 +1,296 @@
+/* ── SERVICES SECTION ── dark theme adaptation of brand/services.html ── */
+
+.services-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 40px 120px;
+}
+
+/* ── INTRO ── */
+.section-intro { margin-bottom: 72px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #1D9E75;
+  margin-bottom: 20px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: #1D9E75;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  color: #F1EFE8;
+  margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: #1D9E75; }
+
+.section-sub {
+  font-size: 16px;
+  color: #888780;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ── CARDS GRID ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.card--featured {
+  margin-top: -24px;
+  margin-bottom: -24px;
+}
+
+/* ── CARD BASE ── */
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.4);
+}
+
+/* ── CARD VARIANTS ── */
+.card--essential {
+  background: #2C2C2A;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.card--featured-inner {
+  background: #04342C;
+  border: 1px solid rgba(29,158,117,0.4);
+}
+.card--premium {
+  background: #2C2C2A;
+  border: 1px solid rgba(29,158,117,0.25);
+}
+
+/* ── CARD HEADER ── */
+.card-header {
+  padding: 32px 32px 24px;
+  position: relative;
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.badge--essential {
+  background: rgba(255,255,255,0.07);
+  color: #888780;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.badge--featured  { background: #EF9F27; color: #633806; }
+.badge--premium   {
+  background: rgba(29,158,117,0.15);
+  color: #1D9E75;
+  border: 1px solid rgba(29,158,117,0.3);
+}
+
+.card-pulse { width: 44px; height: 44px; margin-bottom: 16px; }
+
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  margin-bottom: 8px;
+}
+.title--light { color: #F1EFE8; }
+.title--dark  { color: #F1EFE8; }
+.title--teal  { color: #E1F5EE; }
+
+.card-sub { font-size: 13px; line-height: 1.6; }
+.sub--light { color: #888780; }
+.sub--dark  { color: #888780; }
+.sub--teal  { color: rgba(225,245,238,.65); }
+
+/* ── PRICE ── */
+.card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid;
+}
+.price-row--light { border-color: rgba(255,255,255,0.07); }
+.price-row--dark  { border-color: rgba(255,255,255,0.07); }
+.price-row--teal  { border-color: rgba(29,158,117,.3); }
+
+/* CLAUDE.md absolute rule: prices in DM Mono, color #EF9F27 */
+.price-amount {
+  font-family: 'DM Mono', monospace;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1;
+  color: #EF9F27;
+}
+
+.price-period { font-family: 'DM Mono', monospace; font-size: 12px; }
+.period--light { color: #888780; }
+.period--dark  { color: #888780; }
+.period--teal  { color: rgba(225,245,238,.5); }
+
+.delay-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-top: 10px;
+}
+.delay--light   { background: rgba(29,158,117,0.12); color: #1D9E75; }
+.delay--dark    { background: rgba(29,158,117,0.2);  color: #1D9E75; }
+.delay--premium { background: rgba(29,158,117,0.15); color: #5DCAA5; }
+
+/* ── CARD BODY ── */
+.card-body {
+  padding: 0 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.feature-group { display: flex; flex-direction: column; gap: 0; }
+
+.feature-group-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+}
+.fgl--light { color: #1D9E75; border-color: rgba(255,255,255,0.07); }
+.fgl--dark  { color: #888780; border-color: rgba(255,255,255,0.07); }
+.fgl--teal  { color: rgba(93,202,165,.7); border-color: rgba(29,158,117,.25); }
+
+.feature-list { display: flex; flex-direction: column; gap: 8px; }
+
+.feature-item { display: flex; gap: 10px; align-items: flex-start; }
+
+.feature-check {
+  flex-shrink: 0;
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check--light   { background: rgba(29,158,117,0.15); }
+.check--dark    { background: rgba(29,158,117,0.2);  }
+.check--premium { background: rgba(29,158,117,0.15); }
+
+.feature-check svg { display: block; }
+
+.feature-text { display: flex; flex-direction: column; gap: 1px; }
+.feature-main { font-size: 13px; line-height: 1.4; }
+.fmain--light { color: #F1EFE8; }
+.fmain--dark  { color: #F1EFE8; }
+.fmain--teal  { color: #E1F5EE; }
+
+.feature-note { font-size: 11px; }
+.fnote--light { color: #888780; }
+.fnote--dark  { color: #888780; }
+.fnote--teal  { color: rgba(225,245,238,.45); }
+
+/* ── CTA ── */
+.card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity .2s, transform .15s;
+  text-decoration: none;
+}
+.card-cta:hover { opacity: .88; transform: scale(1.01); }
+
+.cta--light   { background: #1D9E75;  color: #F1EFE8;  }
+.cta--dark    { background: #EF9F27;  color: #633806;  }
+.cta--premium { background: #1D9E75;  color: #04342C;  }
+
+.cta-arrow { font-size: 18px; transition: transform .2s; }
+.card-cta:hover .cta-arrow { transform: translateX(4px); }
+
+/* ── REASSURANCE ROW ── */
+.comparison-note {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.note-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 18px 20px;
+  background: #2C2C2A;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.note-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(29,158,117,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.note-content { display: flex; flex-direction: column; gap: 3px; }
+.note-title   { font-size: 13px; font-weight: 600; color: #F1EFE8; }
+.note-desc    { font-size: 12px; color: #888780; line-height: 1.5; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .cards-grid         { grid-template-columns: 1fr; }
+  .card--featured     { margin-top: 0; margin-bottom: 0; }
+  .comparison-note    { grid-template-columns: 1fr; }
+  .services-section   { padding: 40px 20px 80px; }
+}

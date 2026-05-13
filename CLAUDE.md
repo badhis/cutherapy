@@ -46,9 +46,25 @@ src/
 
 ## Brand Identity
 
-**Name:** Cutherapy  
-**Tagline:** "Votre image mérite du soin"  
-**Tone:** Direct, jargon-free, results-oriented. Never use "passion" or "créatif".
+**Nom:** Cutherapy  
+**Slogan:** "Votre image mérite du soin"  
+**Activité:** Montage vidéo pour médecins & professionnels de santé  
+**Fondateur:** Infirmier Diplômé d'État + monteur vidéo — double légitimité terrain/technique  
+**Ton:** Direct, sans jargon, orienté résultat. Jamais "passion" ou "créatif".
+
+## Hero — texte de référence (page d'accueil)
+
+| Élément | Contenu |
+|---|---|
+| H1 | "Le seul monteur vidéo qui comprend ce que vous dites." |
+| Tagline | "Vous soignez. Je m'occupe de votre image." |
+| CTA 1 | "Voir les offres" → `/services` |
+| CTA 2 | "Prendre contact" → `/contact` |
+
+**Corps :**
+> Infirmier DE certains jours et monteur vidéo le reste du temps.  
+> Je transforme votre brut en contenu propre, sous-titré et prêt à publier — en 48h. Sans allers-retours inutiles.  
+> Vos termes, vos enjeux de crédibilité, vos contraintes déontologiques — je les connais.
 
 ## Color Palette
 
@@ -88,7 +104,7 @@ Carré arrondi (`border-radius: 14px`) fond noir avec cisaillement diagonal teal
 ```css
 clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
 ```
-Icône — SVG custom HeartPulse (stroke `#F1EFE8`, strokeWidth 2) :
+Icône — SVG custom HeartPulse (stroke `#EF9F27`, strokeWidth 2) :
 ```svg
 <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
 <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
