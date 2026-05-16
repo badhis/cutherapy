@@ -69,8 +69,8 @@ export default function ServicesPage() {
                     <div className="feature-item">
                       <div className="feature-check check--light">{checkSvg("#0F6E56")}</div>
                       <div className="feature-text">
-                        <span className="feature-main fmain--light"><strong>Sous-titres</strong> adaptés grand public</span>
-                        <span className="feature-note fnote--light">Termes médicaux reformulés</span>
+                        <span className="feature-main fmain--light"><strong>Sous-titrage personnalisé</strong></span>
+                        <span className="feature-note fnote--light">Adaptés grand public</span>
                       </div>
                     </div>
                     <div className="feature-item">
