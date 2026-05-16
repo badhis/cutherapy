@@ -35,7 +35,7 @@ src/
     Navbar.tsx          # Sticky nav with scroll blur, mobile drawer (AnimatePresence)
     Footer.tsx          # Brand + links + copyright
     FadeIn.tsx          # Reusable scroll-triggered fade wrapper (useInView)
-    Logo.tsx            # LogoMark component (size, variant, bgColor props)
+    Logo.tsx            # LogoMark (icon 64×64) + LogoNav (navbar 230×50) components
 ```
 
 **Key pattern:** `FadeIn` accepts `delay`, `direction` (`up` | `left` | `right` | `none`) and wraps any block. Use it for every section-level element that should animate on scroll.
@@ -100,24 +100,59 @@ Never use Inter, Roboto, or Arial.
 
 ## Logo
 
-Carré arrondi (`border-radius: 14px`) fond noir avec cisaillement diagonal teal :
-```css
-clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
-```
-Icône — SVG custom HeartPulse (stroke `#EF9F27`, strokeWidth 2) :
+**Version v2.0 — "Signal vital + Play"** (charte 2026)
+
+Structure SVG en 3 éléments : HeartPulse (ECG ambre) · Bouton play teal · Nom + tagline DM Mono.
+
+### Règles couleur absolues
+| Élément | Règle |
+|---|---|
+| ECG (2ᵉ path) | `stroke: #EF9F27` — toujours, sans exception |
+| Bouton play (circle) | `fill: #1D9E75` — toujours, sans exception |
+| Cœur (1ᵉʳ path) — fond noir | `stroke: #F1EFE8` |
+| Cœur — fond sable | `stroke: #1A1A1A` |
+| Cœur — fond teal `#04342C` | `stroke: #9FE1CB` |
+| Flèche play — fond noir | `fill: #1A1A1A` |
+| Flèche play — fond sable | `fill: #F1EFE8` |
+
+### Composants (`src/components/Logo.tsx`)
+
+**`LogoMark`** — icône carrée 64×64 (favicon, avatar, app icon)
+- Props : `size` (défaut 64), `variant` (`"dark"` | `"teal"` | `"amber"` | `"circle"`)
+- `"circle"` = rond pour Instagram/avatar (rx=32)
+- Mini play badge en bas-droite (cx=49 cy=49 r=10)
+
+**`LogoNav`** — logo horizontal navbar (viewBox 230×50)
+- Props : `variant` (`"dark"` | `"sand"`), `width` (défaut 190)
+- HeartPulse scale(1.7) + play r=9 + "Cutherapy" DM Serif 20px + baseline + "MONTAGE MÉDICAL" DM Mono 9px
+
+### Structure SVG type (pleine largeur 360×68)
 ```svg
-<path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
-<path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+<g transform="translate(0,4) scale(2.2)">
+  <!-- Cœur -->
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+        stroke="[selon fond]" stroke-width="1.6"/>
+  <!-- ECG — toujours ambre -->
+  <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" stroke="#EF9F27" stroke-width="1.6"/>
+</g>
+<!-- Play — toujours teal -->
+<circle cx="57" cy="30" r="12" fill="#1D9E75"/>
+<polygon points="53,24.5 53,35.5 64,30" fill="[selon fond]"/>
+<!-- Nom -->
+<text x="77" y="36" font-family="'DM Serif Display',Georgia,serif" font-size="26" letter-spacing="-0.6">Cutherapy</text>
+<line x1="77" y1="44" x2="358" y2="44" stroke="[selon fond]" stroke-width="0.5"/>
+<text x="78" y="60" font-family="'DM Mono',monospace" font-size="11" fill="#1D9E75" letter-spacing="2.2">MONTAGE VIDÉO MÉDICAL</text>
 ```
 
-**Trois variations officielles (charte v1.0) :**
-| Variation | Fond mark | Shear | Nom | Slogan |
-|---|---|---|---|---|
-| Principale | `#1A1A1A` | `#1D9E75` | `#1A1A1A` | `#888780` |
-| Dark | `#2C2C2A` | `#1D9E75` | `#F1EFE8` | `#1D9E75` |
-| Accent ambre | `#1A1A1A` | `#EF9F27` | `#1A1A1A` | `#633806` |
-
-Le composant `LogoMark` (`src/components/Logo.tsx`) accepte `size`, `variant` (`"teal"` | `"amber"`), et `bgColor`.
+### Usages par contexte
+| Contexte | Composant | Variante |
+|---|---|---|
+| Navbar | `LogoNav` | `variant="dark"` |
+| Footer / fond teal | SVG inline | cœur `#9FE1CB` |
+| Favicon / app icon | `LogoMark` | `variant="dark"` |
+| Avatar Instagram | `LogoMark` | `variant="circle"` |
+| og:image / LinkedIn | SVG pleine largeur | fond `#1A1A1A` |
+| Email signature | SVG + slogan italique DM Serif | fond sable |
 
 ## Editorial Tone
 

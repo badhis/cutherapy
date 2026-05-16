@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { LogoMark } from "./Logo";
+import { LogoNav } from "./Logo";
 
 const links = [
   { href: "/", label: "Accueil" },
@@ -37,14 +37,8 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <LogoMark size={36} bgColor="#2C2C2A" />
-          <span
-            className="text-lg font-semibold tracking-tight"
-            style={{ fontFamily: "var(--font-sans)", color: "#F1EFE8", letterSpacing: "-0.01em" }}
-          >
-            Cutherapy
-          </span>
+        <Link href="/" className="flex items-center">
+          <LogoNav variant="dark" width={190} />
         </Link>
 
         {/* Desktop links */}

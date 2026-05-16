@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         {/* Brand */}
         <div className="flex items-center gap-3">
-          <LogoMark size={36} bgColor="#363633" />
+          <LogoMark size={36} variant="dark" />
           <div>
             <p
               className="font-semibold text-base"
