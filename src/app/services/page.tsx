@@ -210,7 +210,7 @@ export default function ServicesPage() {
                 <svg className="card-pulse" viewBox="0 0 44 44" fill="none" aria-hidden="true">
                   <rect width="44" height="44" rx="9" fill="rgba(29,158,117,0.15)" />
                   <circle cx="22" cy="22" r="12" stroke="#1D9E75" strokeWidth="1.5" strokeDasharray="3 2" />
-                  <path d="M16 22h12M22 16v12" stroke="#5DCAA5" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M16 22h12M22 16v12" stroke="#1D9E75" strokeWidth="2" strokeLinecap="round" />
                 </svg>
 
                 <h2 className="card-title title--teal">La Prise en Charge Globale</h2>
@@ -231,21 +231,21 @@ export default function ServicesPage() {
                   <p className="feature-group-label fgl--teal">Montage</p>
                   <div className="feature-list">
                     <div className="feature-item">
-                      <div className="feature-check check--premium">{checkSvg("#5DCAA5")}</div>
+                      <div className="feature-check check--premium">{checkSvg("#1D9E75")}</div>
                       <div className="feature-text">
                         <span className="feature-main fmain--teal"><strong>12 vidéos</strong> / mois · tous formats</span>
                         <span className="feature-note fnote--teal">YT long · Shorts · Reels · LinkedIn</span>
                       </div>
                     </div>
                     <div className="feature-item">
-                      <div className="feature-check check--premium">{checkSvg("#5DCAA5")}</div>
+                      <div className="feature-check check--premium">{checkSvg("#1D9E75")}</div>
                       <div className="feature-text">
                         <span className="feature-main fmain--teal"><strong>Habillage graphique</strong> à vos couleurs</span>
                         <span className="feature-note fnote--teal">Intro · Outro · Lower-thirds personnalisés</span>
                       </div>
                     </div>
                     <div className="feature-item">
-                      <div className="feature-check check--premium">{checkSvg("#5DCAA5")}</div>
+                      <div className="feature-check check--premium">{checkSvg("#1D9E75")}</div>
                       <div className="feature-text">
                         <span className="feature-main fmain--teal"><strong>Révisions illimitées</strong></span>
                         <span className="feature-note fnote--teal">Jusqu&apos;à validation complète</span>
@@ -257,21 +257,21 @@ export default function ServicesPage() {
                   <p className="feature-group-label fgl--teal">Direction de contenu</p>
                   <div className="feature-list">
                     <div className="feature-item">
-                      <div className="feature-check check--premium">{checkSvg("#5DCAA5")}</div>
+                      <div className="feature-check check--premium">{checkSvg("#1D9E75")}</div>
                       <div className="feature-text">
                         <span className="feature-main fmain--teal"><strong>Stratégie éditoriale</strong> trimestrielle</span>
                         <span className="feature-note fnote--teal">Plan 90 jours aligné sur vos objectifs</span>
                       </div>
                     </div>
                     <div className="feature-item">
-                      <div className="feature-check check--premium">{checkSvg("#5DCAA5")}</div>
+                      <div className="feature-check check--premium">{checkSvg("#1D9E75")}</div>
                       <div className="feature-text">
                         <span className="feature-main fmain--teal"><strong>Brief de tournage</strong> mensuel</span>
                         <span className="feature-note fnote--teal">Script allégé + cadrage guidé à distance</span>
                       </div>
                     </div>
                     <div className="feature-item">
-                      <div className="feature-check check--premium">{checkSvg("#5DCAA5")}</div>
+                      <div className="feature-check check--premium">{checkSvg("#1D9E75")}</div>
                       <div className="feature-text">
                         <span className="feature-main fmain--teal"><strong>Réunion mensuelle</strong> 30 min</span>
                         <span className="feature-note fnote--teal">Visio de pilotage + veille sujets tendance</span>

@@ -5,13 +5,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, CheckCircle2, Scissors, Clock } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
-const stats = [
-  { value: "50+", label: "Vidéos livrées" },
-  { value: "30+", label: "Pros de santé" },
-  { value: "5j", label: "Délai moyen" },
-  { value: "100%", label: "Satisfaction" },
-];
-
 const services = [
   {
     icon: (
@@ -102,10 +95,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.35 }}
-              className="text-base leading-relaxed mb-3 max-w-md"
+              className="text-lg leading-relaxed mb-3 max-w-md"
               style={{ color: "#888780", fontFamily: "var(--font-sans)" }}
             >
-              Infirmier DE le jour et monteur vidéo le reste du temps.
+              Infirmier certains jours et monteur vidéo le reste du temps.
               Je transforme votre brut en contenu propre, sous-titré et prêt
               à publier — en 48h. Sans allers-retours inutiles.
               Vos termes, vos enjeux de crédibilité, vos contraintes
@@ -116,7 +109,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.42 }}
-              className="text-sm font-medium mb-8 italic"
+              className="text-base font-medium mb-8 italic"
               style={{ fontFamily: "var(--font-serif)", color: "#EF9F27" }}
             >
               Vous soignez. Je m&apos;occupe de votre image.
@@ -241,37 +234,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* ── STATS ── */}
-      <FadeIn>
-        <section className="max-w-6xl mx-auto px-5 py-6">
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden"
-            style={{ border: "1px solid rgba(255,255,255,0.07)", background: "#2C2C2A" }}
-          >
-            {stats.map((s, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center py-8 px-4 text-center"
-                style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.07)" : "none" }}
-              >
-                <span
-                  className="text-3xl md:text-4xl font-bold mb-1"
-                  style={{ fontFamily: "var(--font-mono)", color: "#1D9E75" }}
-                >
-                  {s.value}
-                </span>
-                <span
-                  className="text-xs"
-                  style={{ color: "#888780", fontFamily: "var(--font-sans)" }}
-                >
-                  {s.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </FadeIn>
 
       {/* ── SERVICES ── */}
       <section className="max-w-6xl mx-auto px-5 py-20">

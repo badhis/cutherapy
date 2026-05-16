@@ -173,7 +173,7 @@
 }
 .delay--light   { background: rgba(29,158,117,0.12); color: #1D9E75; }
 .delay--dark    { background: rgba(29,158,117,0.2);  color: #1D9E75; }
-.delay--premium { background: rgba(29,158,117,0.15); color: #5DCAA5; }
+.delay--premium { background: rgba(29,158,117,0.15); color: #1D9E75; }
 
 /* ── CARD BODY ── */
 .card-body {

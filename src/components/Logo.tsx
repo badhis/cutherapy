@@ -111,7 +111,7 @@ export function LogoNav({ variant = "dark", width = 190 }: LogoNavProps) {
         fill="#1D9E75"
         letterSpacing="1.6"
       >
-        MONTAGE MÉDICAL
+        MONTAGE VIDÉO MÉDICAL
       </text>
     </svg>
   );

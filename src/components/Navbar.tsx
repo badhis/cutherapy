@@ -38,7 +38,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <LogoNav variant="dark" width={190} />
+          <LogoNav variant="dark" width={240} />
         </Link>
 
         {/* Desktop links */}

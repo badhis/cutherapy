@@ -23,9 +23,9 @@ const infos = [
 ];
 
 const packOptions = [
-  "Starter (290€ / vidéo)",
-  "Pro (590€ / mois)",
-  "Premium (990€ / mois)",
+  "Le Bilan Initial (600 € / mois)",
+  "Le Traitement de Fond (1 000 € / mois)",
+  "La Prise en Charge Globale (1 500 € / mois)",
   "Je ne sais pas encore",
 ];
 
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 className="text-sm"
                 style={{ fontFamily: "var(--font-mono)", color: "#D3D1C7" }}
               >
-                contact@cutherapy.fr
+                badhispro@gmail.com
               </p>
             </div>
 
