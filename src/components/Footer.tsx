@@ -63,24 +63,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom strip */}
-      <div
-        className="border-t"
-        style={{ borderColor: "rgba(255,255,255,0.05)" }}
-      >
-        <div className="max-w-6xl mx-auto px-5 py-3 flex items-center gap-2">
-          <span
-            className="w-2 h-2 rounded-full inline-block"
-            style={{ background: "#1D9E75" }}
-          />
-          <span
-            className="text-xs"
-            style={{ fontFamily: "var(--font-mono)", color: "#888780", letterSpacing: "0.08em" }}
-          >
-            #1A1A1A · #1D9E75 · #EF9F27
-          </span>
-        </div>
-      </div>
     </footer>
   );
 }

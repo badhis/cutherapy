@@ -29,6 +29,16 @@ const services = [
     desc: "Montages percutants pour renforcer votre crédibilité et rassurer vos futurs patients.",
     tag: "Confiance · Autorité",
   },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+      </svg>
+    ),
+    title: "Ads statiques Meta",
+    desc: "Visuels Canva Pro optimisés pour vos campagnes Facebook & Instagram. Copywriting inclus.",
+    tag: "Facebook · Instagram",
+  },
 ];
 
 export default function Home() {
@@ -98,7 +108,7 @@ export default function Home() {
               className="text-lg leading-relaxed mb-3 max-w-md"
               style={{ color: "#888780", fontFamily: "var(--font-sans)" }}
             >
-              Infirmier certains jours et monteur vidéo le reste du temps.
+              Infirmier au quotidien et monteur vidéo le reste du temps.
               Je transforme votre brut en contenu propre, sous-titré et prêt
               à publier — en 48h. Sans allers-retours inutiles.
               Vos termes, vos enjeux de crédibilité, vos contraintes
@@ -267,15 +277,12 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           {services.map((s, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div
-                className="rounded-2xl p-6 h-full transition-all duration-300 group cursor-default"
-                style={{
-                  background: "#2C2C2A",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                }}
+                className="rounded-2xl p-6 h-full transition-all duration-300 cursor-default"
+                style={{ background: "#2C2C2A", border: "1px solid rgba(255,255,255,0.07)" }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(29,158,117,0.4)";
                   (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
@@ -293,25 +300,15 @@ export default function Home() {
                 >
                   {s.icon}
                 </div>
-                <h3
-                  className="text-xl mb-2"
-                  style={{ fontFamily: "var(--font-serif)", color: "#F1EFE8" }}
-                >
+                <h3 className="text-xl mb-2" style={{ fontFamily: "var(--font-serif)", color: "#F1EFE8" }}>
                   {s.title}
                 </h3>
-                <p
-                  className="text-sm leading-relaxed mb-4"
-                  style={{ color: "#888780", fontFamily: "var(--font-sans)" }}
-                >
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#888780", fontFamily: "var(--font-sans)" }}>
                   {s.desc}
                 </p>
                 <span
                   className="text-xs px-2.5 py-1 rounded-full"
-                  style={{
-                    background: "rgba(29,158,117,0.1)",
-                    color: "#1D9E75",
-                    fontFamily: "var(--font-mono)",
-                  }}
+                  style={{ background: "rgba(29,158,117,0.1)", color: "#1D9E75", fontFamily: "var(--font-mono)" }}
                 >
                   {s.tag}
                 </span>

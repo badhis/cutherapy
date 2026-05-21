@@ -23,9 +23,14 @@ const infos = [
 ];
 
 const packOptions = [
-  "Le Bilan Initial (600 € / mois)",
-  "Le Traitement de Fond (1 000 € / mois)",
-  "La Prise en Charge Globale (1 500 € / mois)",
+  "— Ads statiques Meta —",
+  "Le Test Clinique — Ads (490 € / mois)",
+  "La Campagne Complète — Ads (790 € / mois)",
+  "Le Protocole Autorité — Ads (1 200 € / mois)",
+  "— Pack Reels montés —",
+  "La Dose Hebdomadaire — Reels (590 € / mois)",
+  "Le Traitement de Fond — Reels (990 € / mois)",
+  "La Prise en Charge Globale — Reels (1 500 € / mois)",
   "Je ne sais pas encore",
 ];
 
@@ -278,11 +283,14 @@ export default function ContactPage() {
                     <option value="" style={{ background: "#363633" }}>
                       Choisir un pack
                     </option>
-                    {packOptions.map((p) => (
-                      <option key={p} value={p} style={{ background: "#363633" }}>
-                        {p}
-                      </option>
-                    ))}
+                    {packOptions.map((p) => {
+                      const isSep = p.startsWith("—");
+                      return (
+                        <option key={p} value={isSep ? "" : p} disabled={isSep} style={{ background: "#363633", color: isSep ? "#888780" : "#F1EFE8" }}>
+                          {p}
+                        </option>
+                      );
+                    })}
                   </select>
                 </div>
               </div>
@@ -337,6 +345,19 @@ export default function ContactPage() {
           )}
         </FadeIn>
       </section>
+
+      <FadeIn delay={0.2}>
+        <p
+          className="flex items-center justify-center gap-2 pb-16 text-xs"
+          style={{ fontFamily: "var(--font-mono)", color: "#888780", letterSpacing: "0.04em" }}
+        >
+          <span
+            className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
+            style={{ background: "#1D9E75", boxShadow: "0 0 6px rgba(29,158,117,0.6)" }}
+          />
+          Le nombre de clients suivis chaque mois est volontairement limité — pour garantir une prise en charge à la hauteur de votre image.
+        </p>
+      </FadeIn>
     </div>
   );
 }
